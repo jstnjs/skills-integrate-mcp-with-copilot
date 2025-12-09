@@ -10,7 +10,34 @@
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
+      <div id="user-menu">
+        <button id="user-icon" class="user-icon hidden">👤</button>
+        <div id="user-dropdown" class="user-dropdown hidden">
+          <div id="user-info"></div>
+          <button id="logout-btn">Logout</button>
+        </div>
+      </div>
     </header>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div id="login-message" class="hidden"></div>
+      </div>
+    </div>
 
     <main>
       <section id="activities-container">
@@ -23,7 +50,10 @@
 
       <section id="signup-container">
         <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
+        <div id="auth-required-message" class="info hidden">
+          <p>Only teachers can register students. Please <a href="#" id="login-link">login</a> to continue.</p>
+        </div>
+        <form id="signup-form" class="hidden">
           <div class="form-group">
             <label for="email">Student Email:</label>
             <input type="email" id="email" required placeholder="your-email@mergington.edu" />
